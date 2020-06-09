@@ -1,2 +1,3 @@
-# design-patterns-in-php
-A repo of my notes from Design Patterns: Elements of reusable object-oriented software
+# Design Patterns in PHP
+
+A list of design patterns with their intended use, drawbacks and a code example.
