@@ -89,10 +89,16 @@ class OrderingSystem
 
 ### What are it's drawbacks?
 Abstract Factory is perfect if your system is made up of lots of interchangeable
-peices. Also, it's important that the types (models) of these peices work rarely changes - 
+peices. Also, it's important that the types (models) of these peices rarely changes - 
 the main changes to the system are the concretions (brands) of these peices.
 If however, you wanted to add a new model that doesn't already exist, like a Sedan,
 then you need to update both the interface and all of the concretions to allow for this
-new Model.
+new Model. 
+
+### What are it's benefits?
+- Supports Open/Closed principle
+- Also supports single responsibility principle
+- You avoid tying your code to concretions of classes
 
 ### What design pattern(s) is it used with commonly?
+Often the Abstract Factory is implemented as a Singleton.
