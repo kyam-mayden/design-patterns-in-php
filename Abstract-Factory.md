@@ -33,7 +33,58 @@ car factory will instantiate, eg getCoupe, getSUV etc.
 These will then return a Skoda coupe, or a VW SUV, depending on the concretion.
 
 ### What does it look like in PHP?
+```PHP
+interface CarFactory {
+  public function createSUV()
+  public function createCoupe()
+}
 
+class SkodaFactory implements CarFactory
+{
+  public function createSUV()
+  {
+    return new SkodaSuv();
+  }
+  
+  public function createCoupe()
+  {
+    return new SkodaCoupe();
+  }
+}
+
+class VWFactory implements CarFactory
+{
+  public function createSUV()
+  {
+    return new VWSuv();
+  }
+  
+  public function createCoupe()
+  {
+    return new VWCoupe();
+  }
+}
+
+class OrderingSystem
+{
+  private $carFactory
+  
+  public function __construct (CarFactory $carFactory)
+  {
+    $this->carFactory = $carFactory;
+  }
+  
+  public Function createCoupes(int $number): array
+  {
+    return array_fill(0, $number, $this->carFactory->createCoupe());
+  }
+  
+  public Function createSUVs(int $number): array
+  {
+    return array_fill(0, $number, $this->carFactory->createSUV());
+  }
+}
+```
 
 
 ### What are it's drawbacks?
