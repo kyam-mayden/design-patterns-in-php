@@ -101,4 +101,6 @@ new Model.
 - You avoid tying your code to concretions of classes
 
 ### What design pattern(s) is it used with commonly?
-Often the Abstract Factory is implemented as a Singleton.
+AbstractFactory classes are usually implemented using the Factory pattern,
+but they can also be done using Prototype.
+Often the Concrete Factory is implemented as a Singleton.
