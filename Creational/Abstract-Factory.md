@@ -35,8 +35,8 @@ These will then return a Skoda coupe, or a VW SUV, depending on the concretion.
 ### What does it look like in PHP?
 ```PHP
 interface CarFactory {
-  public function createSUV()
-  public function createCoupe()
+  public function createSUV();
+  public function createCoupe();
 }
 
 class SkodaFactory implements CarFactory
@@ -67,7 +67,7 @@ class VWFactory implements CarFactory
 
 class OrderingSystem
 {
-  private $carFactory
+  private $carFactory;
   
   public function __construct (CarFactory $carFactory)
   {
@@ -87,15 +87,15 @@ class OrderingSystem
 ```
 
 
-### What are it's drawbacks?
+### What are its drawbacks?
 Abstract Factory is perfect if your system is made up of lots of interchangeable
-peices. Also, it's important that the types (models) of these peices rarely changes - 
-the main changes to the system are the concretions (brands) of these peices.
+pieces. Also, it's important that the types (models) of these pieces rarely changes - 
+the main changes to the system are the concretions (brands) of these pieces.
 If however, you wanted to add a new model that doesn't already exist, like a Sedan,
 then you need to update both the interface and all of the concretions to allow for this
 new Model. 
 
-### What are it's benefits?
+### What are its benefits?
 - Supports Open/Closed principle
 - Also supports single responsibility principle
 - You avoid tying your code to concretions of classes
